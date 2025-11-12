@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import "tailwindcss";
+
+@font-face{
+    font-family: "mycustom";
+    src: url("../public/Quicksand_Bold.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: "hi";
+    src: url("../public/Muthiara demo version.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Hide scrollbar globally */
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+html {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+
+
+.coffee {
+    font-family: hi;
+}
