@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Coffee, Facebook, Instagram, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
 
 const fadeIn = (delay = 0) => ({
   hidden: { opacity: 0, y: 20 },
@@ -9,28 +9,33 @@ const fadeIn = (delay = 0) => ({
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1A1A1A] text-[#f8e6d1] py-14 px-6 md:px-20">
+    <footer className="bg-[#1A1A1A] text-[#f8e6d1] py-10 px-5 sm:px-10 lg:px-20">
       {/* Top Icons / Info */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center mb-14">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center mb-12">
+        {/* Phone */}
         <motion.div variants={fadeIn(0.2)} initial="hidden" whileInView="show" viewport={{ once: true }}>
           <div className="flex justify-center mb-3 cursor-pointer">
-            <Phone className="w-8 h-8 text-[#d4a373]" />
+            <Phone className="w-7 h-7 text-[#d4a373]" />
           </div>
-          <p className="text-sm cursor-pointer">(+91) 9876 543 210</p>
+          <p className="text-sm cursor-pointer break-words">(+91) 9876 543 210</p>
         </motion.div>
 
+        {/* Email */}
         <motion.div variants={fadeIn(0.4)} initial="hidden" whileInView="show" viewport={{ once: true }}>
           <div className="flex justify-center mb-3 cursor-pointer">
-            <Mail className="w-8 h-8 text-[#d4a373]" />
+            <Mail className="w-7 h-7 text-[#d4a373]" />
           </div>
-          <p className="text-sm cursor-pointer">contact@coffeego.com</p>
+          <p className="text-sm cursor-pointer break-words">contact@coffeego.com</p>
         </motion.div>
 
+        {/* Location */}
         <motion.div variants={fadeIn(0.6)} initial="hidden" whileInView="show" viewport={{ once: true }}>
           <div className="flex justify-center mb-3 cursor-pointer">
-            <MapPin className="w-8 h-8 text-[#d4a373]" />
+            <MapPin className="w-7 h-7 text-[#d4a373]" />
           </div>
-          <p className="text-sm cursor-pointer">101 Roast St., Bean Town, Brew City, USA</p>
+          <p className="text-sm cursor-pointer max-w-xs mx-auto">
+            101 Roast St., Bean Town, Brew City, USA
+          </p>
         </motion.div>
       </div>
 
@@ -40,12 +45,11 @@ const Footer = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center sm:text-left"
       >
+        {/* About */}
         <div>
-          <h3 className="text-[#f8e6d1] font-semibold mb-3 flex items-center justify-center md:justify-start gap-2">
-            <Coffee className="text-[#d4a373]" /> About CoffeeGo
-          </h3>
+          <h3 className="text-[#f8e6d1] font-semibold mb-3">About CoffeeGo</h3>
           <ul className="space-y-2 text-sm text-[#e3cbaa]">
             <li className="cursor-pointer hover:text-[#f8e6d1] transition">Our Story</li>
             <li className="cursor-pointer hover:text-[#f8e6d1] transition">Our Baristas</li>
@@ -54,6 +58,7 @@ const Footer = () => {
           </ul>
         </div>
 
+        {/* Menu */}
         <div>
           <h3 className="text-[#f8e6d1] font-semibold mb-3">Menu</h3>
           <ul className="space-y-2 text-sm text-[#e3cbaa]">
@@ -64,6 +69,7 @@ const Footer = () => {
           </ul>
         </div>
 
+        {/* Resources */}
         <div>
           <h3 className="text-[#f8e6d1] font-semibold mb-3">Resources</h3>
           <ul className="space-y-2 text-sm text-[#e3cbaa]">
@@ -73,19 +79,20 @@ const Footer = () => {
           </ul>
         </div>
 
+        {/* Subscribe */}
         <div>
           <h3 className="text-[#f8e6d1] font-semibold mb-3">Subscribe</h3>
-          <div className="flex justify-center md:justify-start">
+          <div className="flex flex-col sm:flex-row justify-center sm:justify-start items-center gap-2">
             <input
               type="email"
               placeholder="Your email"
-              className="p-2 rounded-l-lg w-48 bg-[#2b1d0e] text-[#f8e6d1] border border-[#d4a373] focus:outline-none placeholder-[#b3926a]"
+              className="p-2 rounded-lg sm:rounded-l-lg sm:rounded-r-none w-full sm:w-48 bg-[#2b1d0e] text-[#f8e6d1] border border-[#d4a373] focus:outline-none placeholder-[#b3926a]"
             />
-            <button className="bg-[#d4a373] px-4 py-2 rounded-r-lg hover:bg-[#b38350] text-[#1A1A1A] text-sm font-semibold transition cursor-pointer">
+            <button className="bg-[#d4a373] px-5 py-2 rounded-lg sm:rounded-r-lg sm:rounded-l-none hover:bg-[#b38350] text-[#1A1A1A] text-sm font-semibold transition cursor-pointer w-full sm:w-auto">
               Join
             </button>
           </div>
-          <p className="text-xs text-[#c9a87b] mt-2">
+          <p className="text-xs text-[#c9a87b] mt-2 text-center sm:text-left">
             Get our latest brews & offers directly to your inbox.
           </p>
         </div>
@@ -97,12 +104,11 @@ const Footer = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="border-t border-[#d4a373]/30 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-[#b3926a]"
+        className="border-t border-[#d4a373]/30 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-[#b3926a] gap-4"
       >
-        <p>©2025 CoffeeGo. All rights reserved.</p>
+        <p className="text-center md:text-left">©2025 CoffeeGo. All rights reserved.</p>
 
-        {/* Animated Social Icons with Framer + Pointer */}
-        <div className="flex space-x-5 mt-4 md:mt-0">
+        <div className="flex space-x-5">
           {[Facebook, Instagram, Twitter].map((Icon, i) => (
             <motion.a
               key={i}
