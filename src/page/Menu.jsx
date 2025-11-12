@@ -1,9 +1,10 @@
 import React from "react";
+import NotFound from "../Components/NotFound";
 
 function Menu(){
     return(
         <div>
-            <h1> hello</h1>
+            <NotFound/>
         </div>
     )
 }
